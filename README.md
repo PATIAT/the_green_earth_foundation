@@ -1,108 +1,424 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h2 align="left"><img src=" "></h2>
+# The Green Earth Foundation
+### Empowering Environmental Action for a Sustainable Future
 
-Welcome Paul Trotter,
+## Milestone Project 4 - Full Stack Development
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<h2 align="left"><img src=" "></h2>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+### The Green Earth Foundation is a fictional web application that offers:
+- Eco-friendly merchandise: Explore a range of sustainable clothing and accessories that support our environmental initiatives.
+- Simple shopping experience: Add products to your bag, update quantities, and proceed to secure checkout with ease.
+- Worthwhile donations: Opt for one-off or regular contributions, supporting our cause through recurring donations.
+- Informative environmental news: Read articles and news updates related to environmental issues and stay connected with our initiatives.
+- Personalised profile and past orders: Create an account, view order history, and manage details for a personalised experience.
 
-## Gitpod Reminders
+* This is my Milestone Project 4 submission for Code Institute's Diploma in Web Application Development. The Green Earth Foundation is built using Django full-stack framework and uses a Relational Database. Technologies used include HTML, CSS, JavaScript, Python and Stripe payments.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* Key features include:
+- Merchandise Store: Explore and purchase a curated selection of eco-friendly clothing and accessories that contribute to environmental causes.
+- Seamless Shopping Experience: Easily add items to your shopping bag, update quantities, and proceed to a secure checkout process.
+- Secure Donations: Contribute to the charity's mission through secure one-time donations or opt for regular donations with the convenience of Stripe subscriptions.
+- Personalised Profiles: Create an account to access your profile, view order history, manage delivery addresses, and stay connected with the charity's updates.
+- Environmental News Hub: Stay informed with articles and news updates on environmental matters, including updates from the charity's events and initiatives.
+- Integrated Payment System: Experience secure and hassle-free payments with integration of Stripe, offering a variety of payment methods and a streamlined checkout process.
+- Stripe Checkout: Users can add multiple products to their shopping basket and proceed to checkout with Stripe. See [Stripe's testing card details](https://stripe.com/docs/testing?testing-method=card-numbers#visa) to place an order on the website.
 
-`python3 -m http.server`
+## Live Project
 
-A blue button should appear to click: _Make Public_,
+[View the live project here.]()
 
-Another blue button should appear to click: _Open Browser_.
+## Repository
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+[Find the project repository here.]()
 
-A blue button should appear to click: _Make Public_,
+# Table of Contents
 
-Another blue button should appear to click: _Open Browser_.
+## Contents
+- [User experience](#user-experience)
+  * [User Stories](#user-stories)
+- [Design](#design)
+  + [Overview](#overview)
+  + [Colour Scheme](#colour-scheme)
+  + [Typography](#typography)
+  + [Imagery](#imagery)
+  + [Icons](#icons)
+  + [Cards](#cards)
+- [Features](#features)
+- [Future Features](#future-features)
+  + [User Experience Features](#user-experience-features)
+  + [Development Features](#development-features)
+- [Wireframes](#wireframes)
+- [Data Model](#data-model)
+- [Technologies used](#technologies-used)
+  + [Languages Used](#languages-used)
+  + [Frameworks & Libraries](#frameworks--libraries)
+  + [Storage & Hosting](#storage--hosting)
+  + [Payments](#payments)
+  + [APIs](#apis)
+  + [IDE & Version Control](#ide--version-control)
+  + [Other Tools](#other-tools)
+  + [Testing & Code Validation](#testing-code-validation)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+  + [Code](#code)
+  + [Media](#media)
+  + [Content](#content)
+  + [Acknowledgements](#acknowledgements)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+# User Experience
 
-To log into the Heroku toolbelt CLI:
+## User stories
+| User Story ID | User Role       | User Story                                                                                        | So that I can...                                                                                             |
+|---------------|-----------------|--------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+ | Viewing and Navigation | 
+| 1             | Site user       | I want to be able to visit the website and easily navigate through the main landing page         | Find the information I need and learn about the charity's mission and environmental initiatives              |
+| 2             | Site user       | I want the website to be responsive across all devices                                          | Have a seamless browsing experience regardless of the device I'm using                                     |
+| 3             | Site User                    | I want to view the available products, such as branded merchandise | ...explore the offerings and choose the products that suit my needs.                                                                           |
+ | Registration and User Accounts |
+| 4             | Site User                    | I want to be able to register for an account and log in to access personalised features and information.            | ...have a customised experience, save preferences, and access exclusive features.                                                              |
+| 5             | Site User                    | I want to be able to reset my password easily in case I forget it.                                                 | ...regain access to my account and protect my data securely.                                                                                    |
+| 6             | Site User                    | I want to be able to receive and email confirmation after registering.                                                 | ...verify that my account registration was successful.                                                                                    |
+| 7             | Site User                    | I want to have a user profile where I can view my default delivery addresses and see my order history.               | ...access personalized information, manage addresses, and track my previous orders.                                                            |
+ | Sorting and Searching | 
+| 8             | Customer                    | I want to be able to sort the list of available products              | ...easily identify the best rated, best priced and categorically sorted products.                                                           |
+| 9             | Customer                    | I want to be able to sort a specific category of product | ...find the best prices or best rated product in a specific category, or sort the product in that category by name                                                           |
+| 10             | Customer                    | I want to be able to search for a product by name or description | ...find a specific product that I’d like to purchase.                                                           |
+| 11             | Customer                    | I want to be able to see what I have searched for and the number of results | ...quickly decide on whether the product I want is available.                                                           |
+| 12             | Customer        | I want to browse and view the available merchandise in the Products section                    | Explore the products, including clothing and accessories, that contribute to donations                       |
+| 13             | Customer        | I want to add products to my shopping bag and have the ability to update or remove items        | Customize my shopping bag and make changes as needed                                                        |
+ | Purchasing and Checkout | 
+| 14             | Customer        | I want to be able to proceed to checkout securely and make payments using Stripe in test mode  | Complete the purchase of selected items with confidence using a secure payment method in a testing environment |
+| 15             | Customer        | I want the option to subscribe to regular donations using Stripe subscription feature           | Contribute to the charity on a recurring basis for ongoing support                                           |
+| 16             | Site User                    | I want to have the option to add products to my shopping bag and update or remove items as needed.                   | ...manage my shopping bag contents and make adjustments before proceeding to checkout.                                                          |
+| 17            | Customer                     | I want to have a clear overview of the contents of my shopping bag, including the ability to update quantities.     | ...review my selections, make changes, and proceed to checkout with the correct order details.                                                   |
+| 18            | Customer                     | I want a secure and user-friendly payment process that accepts various payment methods.                            | ...safely and conveniently complete my purchase using my preferred payment method.                                                              |
+| 19            | Customer                     | I want be able to view an order confirmation after checking out                            | ...to verify that I haven’t made any mistakes.                                                              |
+| 20            | Customer                     | I want to receive email notifications about my order status, including payment confirmation and shipping updates.   | ...stay informed about the progress of my order and anticipate its delivery.                                                                    |
+| Admin and Store Management | 
+| 21             | Business Owner  | I want to have control over the content on the Home page                                        | Update the website's main landing page, calls to action, and featured content                                |
+| 21            | Business Owner (Superuser)   | I want to be able to create, edit, update, and delete products in the inventory.                                   | ...manage the product offerings, ensure accurate information, and keep the inventory up to date.                                               |
+| 22            | Business Owner (Superuser)   | I want to have the ability to publish articles related to food safety and compliance to educate site users.       | ...share valuable insights and knowledge with the site users to promote awareness and enhance their understanding.                                |
+| 23            | Business Owner (Superuser)   | I want to manage user accounts and have administrative privileges to ensure the smooth operation of the website.   | ...have control over user management and maintain site security.                                               |
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Design
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Overview
 
-------
+- Earthy and Natural: The application's design elements, colour palette, and imagery are inspired by nature, reflecting the earthy tones of greens and browns with striking red for distinctiveness. This creates a sense of harmony with the environment and a connection to the natural world while maintaining that eye-catching draw.
 
-## Release History
+- Clean and Minimalistic: The design follows a clean and minimalistic approach, focusing on simplicity and clarity. It avoids clutter and excessive ornamentation, allowing the content and purpose of the application to shine through.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Sustainable and Ethical Imagery: The visuals used in the application embrace images that showcase sustainability, eco-friendly practices, and the beauty of nature. This includes photographs of forests, wildlife, renewable energy sources, and people engaging in environmentally conscious activities.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Intuitive and User-Centric: The user interface prioritises ease of use and intuitive navigation. It employs clear typography, well-organised layouts, and thoughtful placement of interactive elements, ensuring that users can effortlessly explore the application and engage with its features.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- Empowering and Inspiring: The aesthetic of the application aims to evoke a sense of empowerment and inspiration. It incorporates motivational quotes, positive messaging, and uplifting visuals that encourage users to take action towards environmental conservation and make a positive impact on the planet.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Overall, the aesthetic of the application strives to create a visually appealing, engaging, and immersive experience for users, aligning with the mission of the foundation and its commitment to environmental sustainability.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Colour Scheme
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- The Green Earth Foundation uses quite a limited colour palette, making the most of the contrast between white, dark green and a range of lighter greens and brown with a striking red which create a sleek and professional appearance.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- I used the [Adobe Colour Wheel and Accessibility Checker]( https://color.adobe.com/create/color-wheel) to ensure my chosen colour palette had sufficient colour ratio for visually impaired users.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<h2 align="left"><img src=" "></h2>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Typography
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- Headings are in Playfair Display with serif as a fallback font. This font is bold and eye-catching which is intended to attract the attention of the user. The body type is Montserrat with sans-serif as a fallback font. Both typefaces complement each other well and provide an easily legible text that will be easy to read on all device sizes.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Images
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The imagery used in the application aims to inspire, educate, and create an emotional connection with the users, reinforcing the importance of environmental conservation and motivating them to contribute towards a sustainable future. Images include:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- Natural Landscapes: High-quality photographs showcasing breathtaking natural landscapes, such as forests, mountains, oceans, and wildlife habitats. These images evoke a sense of awe and appreciation for the beauty of the Earth.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- Sustainable Practices: Imagery depicting eco-friendly practices like recycling, renewable energy, organic farming, and conservation efforts. These visuals highlight the importance of sustainable living and inspire users to adopt environmentally conscious behaviors.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- Diverse Flora and Fauna: Images featuring a diverse range of plant and animal species, including endangered species and indigenous flora. These visuals celebrate biodiversity and raise awareness about the need to protect and preserve our natural ecosystems.
 
-------
+- Human Connection: Photographs capturing people engaging in environmental activities like tree planting, beach cleanups, and sustainable farming. These images convey the message that individual actions can make a significant impact on the environment and foster a sense of community and collective responsibility.
 
-## FAQ about the uptime script
+- Environmental Impact: Visual representations illustrating the consequences of environmental degradation, such as pollution, deforestation, and climate change. These images serve as a reminder of the urgency to address these issues and encourage users to take action.
 
-**Why have you added this script?**
+- Almost all the images are displayed in bootstrap cards with an image cap. This allows the content to be structured and organised in a consistent fashion.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- Although not always appropriate, the admin can choose to set a featured image. This is the image that appears first by default. There is a fallback 'holding' image if the admin does not set a featured image.
 
-**How will this affect me?**
+- Consistent aspect ratios have been used to bring visual continuity to the site across different page layouts.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Icons
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- I have used Font Awesome icons throughout the website. They are used within the navigation menus to offer a more clean and sleek appearance. I have used them on buttons to reinforce the action of the button. They are also used within product details pages to visually represent different sections of the product features etc. I have added screen reader alternatives as appropriate.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Cards
 
-**So….?**
+- I decided to use bootstrap cards as a method of containing content in an organised and logical fashion. It also facilitates good user experience by implementing a consistent approach across the website. These include multiple cards with images caps that appear on the products page but also card containers that appear on the shopping basket, checkout and checkout confirmation pages.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+# Features
 
-**Can I opt out?**
+## All Pages
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Responsive design
+- Semantic HTML
+- Combination of Bootstrap and custom CSS to give the website a consistent and clean aesthetic.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Header & Navigation
 
-**Anything more?**
+- Website branding name as an H1 Heading
+- Navigation with links, including:
+  - Donate button
+  - Search (search bar functionality)
+  - User Profile Options (register/login/view profile/view reviews)
+  - Shopping Basket (changes colour if cart is not empty)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Footer
 
----
+- About Us
+- Social Links 
 
-Happy coding!
+### Messages
+
+- Success message (including Shopping Basket link when applicable)
+- Info message (as necessary)
+- Error message (as necessary)
+- Warning message (as necessary)
+
+## Homepage
+
+- Jumbotron with series of images
+- Featured Merchandise (products)
+- Featured News
+- Call To Action (CTA) buttons
+
+## All Products Page
+- Wide Image
+- Sort by:
+  - Price (low to high)
+  - Price (high to low)
+  - Rating (low to high)
+  - Rating (high to low)
+  - Name (A–Z)
+  - Name (Z-A)
+  - Category (A-Z)
+  - Category (Z-A)
+- Count of products on page
+- Product Cards, featuring:
+  - Featured Image (if appropriate) or Fallback Image
+  - Image carousel if multiple images
+  - Facility tooltips
+  - Average Rating
+  - Buy button
+
+## Product Detail Page
+  - Featured Image or Fallback Image
+  - Image carousel if multiple images
+  - Product name
+  - Product category tag
+  - Review (average rating)
+  - Product description
+  - Quantity
+  - Price
+  - Back to shop button 
+  - Buy now button(adds to shopping basket)
+
+## Shopping Basket Page
+- Product details for each product added to bag, featuring:
+  - Subtotal
+- Remove from shopping basket option
+- Shopping Basket Total
+- Secure Checkout button
+- Back to shopping button
+
+## Checkout Page
+- Order summary
+- Checkout form, featuring:
+  - Option to save information to profile
+  - Auto populates with content saved to user profile
+  - Stripe payment
+
+## Checkout Confirmation Page/ Email
+- Checkout confirmation page
+- Sends order confirmation email
+
+## Authentication Pages
+- Register/ Log In/ Log Out/ Reset Password Pages
+- Features largely provided by Django allauth
+
+## User Profile Page
+- Default information form
+- Order history
+- Users must be logged in
+- Users can only access their own User Profile
+
+## Reviews Pages
+- Users can view all their reviews
+- Users must be logged in
+- Users can only access their own reviews
+
+## Add/ Edit/ Delete Products / Articles (superuser)
+- Add Product/Article Page
+- Edit Product/Article Page
+- Delete Product/Article
+- Superuser must be logged in
+- Superuser only access
+
+# Future Features
+
+## User Experience Features
+
+# Wireframes
+
+- [View my wireframes in PDF form here]().
+
+# Data Model
+
+## Considerations
+
+A few of the key points I had to consider when designed my database schema was:
+
+## Database Schema
+
+The following Data models were used:
+
+This diagram outlines each model's fields and illustrates the relationship between the models:
+
+<h2 align="left"><img src=" "></h2>
+
+# Technologies Used
+
+## Languages Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+## Frameworks & Libraries
+
+- [Django](https://www.djangoproject.com/)
+  - This website is built using Django, a high-level Python web framework. The Green Earth Foundation contains multiple apps with model, view and template layers. I have also used Django to provide an admin view, create forms and test the website. Further features used include [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) for user authentication, Pillow for uploading images, and Crispy Forms.
+
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+  - Templating language I've used with Python to add logic to my html templates.
+
+- [jQuery](https://jquery.com/)
+  - I used jQuery to add functionality to Bootstrap components and within my scripts.
+
+- [Bootstrap 4](https://getbootstrap.com/) 
+  - I used bootstrap throughout the site to make it responsive. The website uses Bootstrap's Containers, Grid System, Flexbox and Spacing utilities. I sourced code from the Bootstrap documentation when building the Navbar, Image Carousels, Cards and Buttons.
+
+- [Google Fonts](https://fonts.google.com/)
+  - Fonts are imported from google fonts.
+  
+- [Font awesome](https://fontawesome.com/)
+  - I used icons from font awesome across the website
+
+## Storage & Hosting
+
+- [Heroku](https://id.heroku.com/login)
+  - Heroku is the deployment source I used for this project.
+
+- [Github](https://github.com/)
+  - Github was used to create and store the project repository.
+
+- [Amazon Web Services](https://aws.amazon.com/)
+  - AWS is used to host and store static files and media.
+
+- [ElephantSQL](https://www.elephantsql.com/)
+  - ElephantSQL is used to host the website's PostgreSQL database.
+
+## Payments
+
+- [Stripe](https://stripe.com/gb)
+  - Stripe is used to handle website payments.
+
+## IDE & Version Control
+
+- [Git](https://git-scm.com/)
+  - Git was used as a version control in the terminal.
+
+- [Gitpod](https://gitpod.io/)
+  - Gitpod was used to create my files and where I wrote the code.
+
+## Other Tools
+
+- [Balsamiq](https://balsamiq.com/)
+  - Balsamiq was used to create Wireframes for the project during the initial planning stage.
+
+- [Techsini](https://techsini.com/multi-mockup/)
+  - Techsini was used to help check responsiveness and take screenshots of the page at different screen sizes.
+
+- [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html)
+  - Photoshop was used to resize images for the website.
+
+- [TinyPNG](https://tinypng.com/)
+  - TinyPNG was used to compress images for a faster loading time.
+
+- [WebFormatter](https://webformatter.com/html)
+  - WebFormatter was used to help beautify the code.
+
+- [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+  - Google Chrome's Dev Tools were used while building the project to test responsiveness and for debugging.
+
+- [dbdiagram](https://dbdiagram.io/)
+  - Tool used to mock up database structure diagram.
+
+- [Unsplash](https://unsplash.com/)
+  - Unsplash was used to source the website imagery.
+
+## Testing & Code Validation
+
+The following tools were used for testing and code validation. You can see results in the Testing section of this README.
+
+- [W3C Markup Validation Service](https://validator.w3.org/)
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+- [JSHint](https://jshint.com/)
+- [Coverage](https://coverage.readthedocs.io/en/7.0.1/)
+- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)
+- [Python Linting on Gitpod](https://open-vsx.org/extension/ms-python/python)
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [WAVE Web Accessibility Evaluation Tools](https://wave.webaim.org/)
+
+# Testing
+
+- Please refer [here](docs/TESTING.md) for more information on testing of the Green Earth Foundation website
+
+# Deployment
+
+- Please refer [here](docs/DEPLOYMENT.md) for more information on the deployment of the Green Earth Foundation website
+
+# Credits
+
+## Code
+
+### Code Institute:
+  - The groundwork for this website was sourced from the Code Institute’s Boutique Ado walkthrough project which is an e-commerce website. This website has been customised wherever possible. The Basket, Checkout, Stripe payments, webhooks and email verification are comparable to the walkthrough project as I believe the basis of this functionality is sufficient for the user goals of this website. 
+
+### Django:
+  - I referred to the Django documentation whilst building my project, referring to the following articles.
+    - 
+    - 
+    - 
+
+### Bootstrap:
+  - I have used Bootstrap extensively throughout the development of this website, including for layout utilities and cards. The Bootstrap documentation was referred to when building the navbar, image carousels, and dropdowns. These were sourced through the [Bootstrap documentation]()
+
+### Stack Overflow: 
+  - Throughout the development of this website, I have referred to stack overflow articles as follows:
+
+## Content
+
+- The content for this website has been generated, partly from my own knowledge of the food industry but I have also referred to and took inspiration from [Campden BRI]( https://www.campdenbri.co.uk/) and [FDF]( https://www.fdf.org.uk/).
+
+## Media
+
+- As I sourced all the images for the Green Earth Foundation website from Pexels and Unsplash, there is an extensive list of media credits available.
+
+- Please refer [here](docs/README/CREDITS.md) for full image and media credits for the Green Earth Foundation website.
