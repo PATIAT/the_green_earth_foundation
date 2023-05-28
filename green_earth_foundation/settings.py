@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',  # allows basic user account: login, logout, password reset etc
+    'allauth.socialaccount',  # social media login functionality
 ]
 
 MIDDLEWARE = [
@@ -59,13 +64,33 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.request',  # required by django allauth (accesses http requests in templates)
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Allows authentication via email or username
+ACCOUNT_EMAIL_REQUIRED = True  # Email required to register for site
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # Confirms email is genuine
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True  # Requires users to verify by entering twice
+ACCOUNT_USERNAME_MIN_LENGTH = 4  # Mininum username length
+LOGIN_URL = '/accounts/login/'  # Login URL
+LOGIN_REDIRECT_URL = '/'  # Redirects here after login
 
 WSGI_APPLICATION = 'green_earth_foundation.wsgi.application'
 
