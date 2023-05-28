@@ -1,0 +1,151 @@
+/* ====================
+GOOGLE FONTS IMPORTS
+==================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ====================
+BODY AND HEADING STYLES
+==================== */
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #284030;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* ====================
+HEADING CONTAINERS
+==================== */
+
+/* Homepage (index.html) jumbotron */
+.jumbotron {
+    background: url('/media/home-page-test-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 50vh;
+    color: #F2F0F2;
+}
+
+/* ====================
+FONTAWESOME STYLING
+==================== */
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+i {
+    color: #284030;
+}
+
+.fa-search {
+    color: #F2F0F2;
+}
+
+/* ====================
+LOGO STYLING
+==================== */
+
+.logo {
+display: flex;
+align-items: center;
+}
+
+.logo-font {
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    font-size: x-large;
+    color: #284030;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+/* ====================
+BUTTON STYLING
+==================== */
+
+.donate-now-button {
+    background: #F20530;
+    color: #F2F0F2;
+    min-width: 260px;
+}
+
+.donate-now-button:hover,
+.donate-now-button:active,
+.donate-now-button:focus {
+    background: #284030;
+    color: #F2F0F2;
+}
+
+.btn-green {
+    background: #284030;
+    color: #F2F0F2;
+}
+
+.btn-green:hover,
+.btn-green:active,
+.btn-green:focus {
+    background: #A6774E;
+    color: #F2F0F2;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+
+/* ====================
+MEDIA QUERY STYLING
+==================== */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 160px;
+    }
+}
+
+/* To remove logo heading on smaller screens */
+@media (max-width: 991px) {
+    .logo h1 {
+      display: none;
+    }
+  }
