@@ -2,27 +2,64 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-contianer">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="header-container-small"></div>
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    Empowering Environmental Action for a Sustainable Future
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="" class="shop-now-button btn btn-ls rounded-0 text-uppercase py-3">Donate Now</a>
-                    </h4>
-                </div>
-            </div>    
+<div class="jumbotron jumbotron-fluid d-flex align-items-end">
+    <div class="container">
+        <h1 class="display-4">The Green Earth Foundation</h1>
+        <p class="lead">Empowering Environmental Action for a Sustainable Future</p>
+        <a class="btn btn-red" href="" role="button">Donate Today</a>
+    </div>
+</div>
+
+<!--Featured Products -->
+<div class="container pt-4 pb-5 mb-2">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="mb-4 mt-2 text-center">Featured Products</h3>
         </div>
     </div>
+
+    <!-- Enter Featured Products here -->
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <a class="btn btn-dark-green" href="" role="button">Explore All Products</a>
+        </div>
+    </div>
+</div>
+
+<!--Featured Categories -->
+<div class="container-fluid" id="featured-categories">
+    <div class="container pt-4 pb-5 mt-4 mb-2">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mb-3 mt-2 text-center text-white">Featured Categories</h3>
+            </div>
+        </div>
+
+        <!-- Enter Featured Categories here -->
+
+    </div>
+</div>
+
+<!-- Latest News -->
+<div class="container pt-4 pb-5">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="mb-4 mt-4 text-center">Latest News</h3>
+        </div>
+    </div>
+
+    <!-- Enter Latest News here -->
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <a class="btn btn-dark-green" href="" role="button">Explore All News Articles</a>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

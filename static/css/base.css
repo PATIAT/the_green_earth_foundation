@@ -1,85 +1,300 @@
-html {
-    height: 100%;
+/* ====================
+GOOGLE FONTS IMPORTS
+==================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ====================
+COLOUR STYLES
+==================== */
+
+.dark-green-text {
+    color: #284030;
 }
+
+.green-text {
+    color: #748C4F;
+}
+
+/* ====================
+BODY & HEADING STYLES
+==================== */
 
 body {
-	background: url('/media/home-page-test-image.jpg') no-repeat center center fixed;
-	background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: "Lato";
+    background-color: #F2F0F2;
+    color: #284030;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* from Bulma */
+.fixed-top {
+    background-color: #F2F0F2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/*containers that push down the template content beneath that of the base template*/
+
+.header-container-large {
+    padding-top: 108px;
+}
+
+.header-container-small {
+    padding-top: 64px;
+}
+
+/* ====================
+NAVIGATION STYLES
+==================== */
+
+.navbar {
+    padding-bottom: 0;
+    height: 74px;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.gef-hr {
+    margin: 0;
+    color: #284030;
+}
+
+/* ====================
+BANNER STYLES
+==================== */
+
+#banner {
+    background-color: #F20530;
+}
+
+#banner a {
+    color:#F2F0F2;
+}
+
+/* ====================
+FOOTER STYLES
+==================== */
+
+/* Originally from Code Institute Resume project */
+footer {
+    min-height: 10vh;
+    width: 100%;
+}
+  
+footer .row {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.social-links li a i {
+    font-size: 32px;
+    text-align: center;
+    margin: 0;
+    color: #284030;
+}
+
+.social-links li a i:hover {
+    color: #748C4F;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+  
+.tagline {
+    font-style: italic;
+}
+
+/* ====================
+HOME (INDEX.HTML) PAGE
+==================== */
+
+.jumbotron {
+    background: url('/media/home-page-test-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 50vh;
+    color: #F2F0F2;
+}
+
+.category-card-title {
+    font-size: x-large;
+    font-family: Jost, sans-serif;
+}
+
+.card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#featured-categories {
+    background-color: #284030;
+}
+
+#featured-categories .card {
+    border: none;
+}
+
+/* ====================
+CARD STYLES
+==================== */
+
+.card-full-width {
+    width: 100%;
+}
+
+.card-body {
+    min-height: 148px;
+}
+
+/* ====================
+BUTTONS & FA ICON STYLES
+==================== */
+
 .icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+    color: #284030;
 }
 
-.logo-font {
-    text-transform: uppercase;
+.icon:hover,
+.icon:active,
+.icon:focus {
+    color: #748C4F;
 }
 
-.main-logo-link {
-    width: fit-content;
+.btn-red {
+    background-color: #F20530;
+    color: #F2F0F2;
 }
 
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
+.btn-red:hover,
+.btn-red:active,
+.btn-red:focus
+ {
+    background-color: #284030;
+    color: #F2F0F2;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
-.btn-black {
-    background: black;
-    color: white;
+.btn-dark-green {
+    background-color: #284030;
+    color: #F2F0F2;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
+.btn-dark-green:hover,
+.btn-dark-green:active,
+.btn-dark-green:focus
+ {
+    background-color: #748C4F;
+    color: #F2F0F2;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
-.text-black {
-    color: #000 !important;
+.btn-light-green {
+    background-color: #748C4F;
+    color: #F2F0F2;
 }
 
-.border-black {
-    border: 1px solid black !important;
+.btn-light-green:hover,
+.btn-light-green:active,
+.btn-light-green:focus
+ {
+    background-color: #284030;
+    color: #F2F0F2;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
-.bg-black {
-    background: #000 !important;
+/* ====================
+FORM STYLES
+==================== */
+
+.form-control {
+    background-color: #F2F0F2;
+    color: #284030;
 }
 
-/* --------------------------------- Media queries */
+.form-control input::placeholder {
+    color: #495057;
+}
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-toggle {
+    width: 100%;
+}
+
+.dropdown-menu-full-width {
+    width: 100%;
+}
+
+input.larger {
+    transform: scale(2);
+    margin-right: 0.5rem;
+    accent-color: #474d23;
   }
+
+/* ====================
+DJANGO TOASTS STYLES
+==================== */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
 }
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
+.custom-toast {
+    overflow: visible;
+}
 
-    .header-container {
-        padding-top: 164px;
+.toast-capper {
+    height: 2px;
+}
+
+/* ====================
+MEDIA QUERY STYLES
+==================== */
+
+/* Changes the nav links based on screensize */
+@media (min-width: 1024px) {
+    .nav-link {
+        font-size: 1.25rem;
+    }
+}
+
+/* Search and book banner adjustments */
+@media (max-width: 425px) {
+    .header-container-lg {
+        padding-top: 144px;
+    }
+    
+    .header-container-sm {
+        padding-top: 96px;
     }
 }
