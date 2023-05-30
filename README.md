@@ -1,6 +1,9 @@
-<h2 align="left"><img src=" "></h2>
+<h2 align="left"><img src="media/the-green-earth-foundation-logo-white-bg.png" height="200px" width="200px"></h2>
+
 # The Green Earth Foundation
+
 ### Empowering Environmental Action for a Sustainable Future
+
 
 ## Milestone Project 4 - Full Stack Development
 
