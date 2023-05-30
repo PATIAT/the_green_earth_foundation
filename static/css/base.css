@@ -42,7 +42,7 @@ h6 {
     font-family: 'Playfair Display', serif;
 }
 
-/*containers that push down the template content beneath that of the base template*/
+/*Containers that push down the template content beneath that of the base template*/
 
 .header-container-large {
     padding-top: 108px;
@@ -52,6 +52,17 @@ h6 {
     padding-top: 64px;
 }
 
+/*Sourced from Code Institure Boutique Ado project*/
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
 /* ====================
 NAVIGATION STYLES
 ==================== */

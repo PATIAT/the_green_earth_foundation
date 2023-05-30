@@ -2,65 +2,75 @@
 {% load static %}
 
 {% block page_header %}
-<div class="header-container-small"></div>
+<div class="header-container-large"></div>
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron jumbotron-fluid d-flex align-items-end">
-    <div class="container">
-        <h1 class="display-4">The Green Earth Foundation</h1>
-        <p class="lead">Empowering Environmental Action for a Sustainable Future</p>
-        <a class="btn btn-red" href="" role="button">Donate Today</a>
-    </div>
-</div>
-
-<!--Featured Products -->
-<div class="container pt-4 pb-5 mb-2">
-    <div class="row">
-        <div class="col-12">
-            <h3 class="mb-4 mt-2 text-center">Featured Products</h3>
-            {{ products }}
-        </div>
-    </div>
-
-    <!-- Enter Featured Products here -->
-
-    <div class="row">
-        <div class="col-12 text-center">
-            <a class="btn btn-dark-green" href="" role="button">Explore All Products</a>
-        </div>
-    </div>
-</div>
-
-<!--Featured Categories -->
-<div class="container-fluid" id="featured-categories">
-    <div class="container pt-4 pb-5 mt-4 mb-2">
+<!-- All Products -->
+    <div class="overlay"></div>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <h3 class="mb-3 mt-2 text-center text-white">Featured Categories</h3>
+            <div class="col text-center mt-3">
+                <h2>Products</h2>
+                <hr class="w-75 mb-1">
             </div>
         </div>
-
-        <!-- Enter Featured Categories here -->
-
-    </div>
-</div>
-
-<!-- Latest News -->
-<div class="container pt-4 pb-5">
-    <div class="row">
-        <div class="col-12">
-            <h3 class="mb-4 mt-4 text-center">Latest News</h3>
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card h-100 border-0">
+                                {% if product.image %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
+                                <div class="card-body pb-0">
+                                    <p class="mb-0">{{ product.name }}</p>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            {% if product.rating %}
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                            {% else %}
+                                                <small class="text-muted">No Rating</small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}                        
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Enter Latest News here -->
-
-    <div class="row">
-        <div class="col-12 text-center">
-            <a class="btn btn-dark-green" href="" role="button">Explore All News Articles</a>
-        </div>
-    </div>
-</div>
-
 {% endblock %}
