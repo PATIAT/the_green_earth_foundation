@@ -127,7 +127,7 @@ Overall, the aesthetic of the application strives to create a visually appealing
 
 - I used the [Adobe Colour Wheel and Accessibility Checker]( https://color.adobe.com/create/color-wheel) to ensure my chosen colour palette had sufficient colour ratio for visually impaired users.
 
-<h2 align="left"><img src=" "></h2>
+<h2 align="left"><img src=""></h2>
 
 ### Typography
 
