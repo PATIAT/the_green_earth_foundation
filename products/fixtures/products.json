@@ -1,0 +1,213 @@
+[
+    {
+      "pk": 1,
+      "model": "products.product",
+      "fields": {
+        "sku": "CLO001",
+        "name": "Organic Cotton T-Shirt",
+        "description": "A comfortable and sustainable t-shirt made from 100% organic cotton.",
+        "price": 29.99,
+        "category": 1,
+        "rating": 4.5,
+        "image_url": "https://example.com/images/organic_tshirt.jpg",
+        "image": "organic_tshirt.jpg"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.product",
+      "fields": {
+        "sku": "CLO002",
+        "name": "Recycled Denim Jeans",
+        "description": "Stylish jeans made from recycled denim, reducing waste and supporting sustainability.",
+        "price": 59.99,
+        "category": 1,
+        "rating": 4.2,
+        "image_url": "https://example.com/images/recycled_jeans.jpg",
+        "image": "recycled_jeans.jpg"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+        "sku": "CLO003",
+        "name": "Organic Hemp Hoodie",
+        "description": "A cozy and eco-friendly hoodie made from organic hemp fibers.",
+        "price": 49.99,
+        "category": 1,
+        "rating": 4.7,
+        "image_url": "https://example.com/images/organic_hoodie.jpg",
+        "image": "organic_hoodie.jpg"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "products.product",
+      "fields": {
+        "sku": "CLO004",
+        "name": "Fair Trade Linen Dress",
+        "description": "A beautiful linen dress ethically made with fair trade practices.",
+        "price": 79.99,
+        "category": 1,
+        "rating": 4.4,
+        "image_url": "https://example.com/images/linen_dress.jpg",
+        "image": "linen_dress.jpg"
+      }
+    },
+    {
+      "pk": 5,
+      "model": "products.product",
+      "fields": {
+        "sku": "CLO005",
+        "name": "Sustainable Bamboo Socks",
+        "description": "Soft and breathable socks made from sustainable bamboo fibers.",
+        "price": 9.99,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "https://example.com/images/bamboo_socks.jpg",
+        "image": "bamboo_socks.jpg"
+      }
+    },
+    {
+      "pk": 6,
+      "model": "products.product",
+      "fields": {
+        "sku": "ACC001",
+        "name": "Bamboo Sunglasses",
+        "description": "Stylish sunglasses made from sustainable bamboo with UV protection.",
+        "price": 39.99,
+        "category": 2,
+        "rating": 4.8,
+        "image_url": "https://example.com/images/bamboo_sunglasses.jpg",
+        "image": "bamboo_sunglasses.jpg"
+      }
+    },
+    {
+      "pk": 7,
+      "model": "products.product",
+      "fields": {
+        "sku": "ACC002",
+        "name": "Reusable Water Bottle",
+        "description": "A durable and eco-friendly water bottle made from BPA-free materials.",
+        "price": 19.99,
+        "category": 2,
+        "rating": 4.7,
+        "image_url": "https://example.com/images/reusable_bottle.jpg",
+        "image": "reusable_bottle.jpg"
+      }
+    },
+    {
+      "pk": 8,
+      "model": "products.product",
+      "fields": {
+        "sku": "ACC003",
+        "name": "Recycled Messenger Bag",
+        "description": "A versatile messenger bag made from upcycled materials, perfect for sustainable travel.",
+        "price": 69.99,
+        "category": 2,
+        "rating": 4.3,
+        "image_url": "https://example.com/images/recycled_bag.jpg",
+        "image": "recycled_bag.jpg"
+      }
+    },
+    {
+      "pk": 9,
+      "model": "products.product",
+      "fields": {
+        "sku": "ACC004",
+        "name": "Cork Wallet",
+        "description": "A stylish and sustainable wallet made from eco-friendly cork material.",
+        "price": 34.99,
+        "category": 2,
+        "rating": 4.5,
+        "image_url": "https://example.com/images/cork_wallet.jpg",
+        "image": "cork_wallet.jpg"
+      }
+    },
+    {
+      "pk": 10,
+      "model": "products.product",
+      "fields": {
+        "sku": "ACC005",
+        "name": "Handmade Wooden Earrings",
+        "description": "Artisan-crafted wooden earrings made from responsibly sourced wood.",
+        "price": 14.99,
+        "category": 2,
+        "rating": 4.6,
+        "image_url": "https://example.com/images/wooden_earrings.jpg",
+        "image": "wooden_earrings.jpg"
+      }
+    },
+    {
+      "pk": 11,
+      "model": "products.product",
+      "fields": {
+        "sku": "HOM001",
+        "name": "Soy Wax Scented Candle",
+        "description": "A hand-poured scented candle made from natural soy wax with a recyclable container.",
+        "price": 24.99,
+        "category": 3,
+        "rating": 4.6,
+        "image_url": "https://example.com/images/soy_candle.jpg",
+        "image": "soy_candle.jpg"
+      }
+    },
+    {
+      "pk": 12,
+      "model": "products.product",
+      "fields": {
+        "sku": "HOM002",
+        "name": "Bamboo Utensil Set",
+        "description": "A sustainable and reusable bamboo utensil set for eco-friendly dining.",
+        "price": 14.99,
+        "category": 3,
+        "rating": 4.4,
+        "image_url": "https://example.com/images/bamboo_utensils.jpg",
+        "image": "bamboo_utensils.jpg"
+      }
+    },
+    {
+      "pk": 13,
+      "model": "products.product",
+      "fields": {
+        "sku": "HOM003",
+        "name": "Recycled Glass Vase",
+        "description": "A beautifully crafted vase made from recycled glass, adding an eco-friendly touch to your home decor.",
+        "price": 39.99,
+        "category": 3,
+        "rating": 4.7,
+        "image_url": "https://example.com/images/recycled_vase.jpg",
+        "image": "recycled_vase.jpg"
+      }
+    },
+    {
+      "pk": 14,
+      "model": "products.product",
+      "fields": {
+        "sku": "HOM004",
+        "name": "Organic Cotton Towel Set",
+        "description": "A set of soft and absorbent towels made from organic cotton for a sustainable bathroom.",
+        "price": 49.99,
+        "category": 3,
+        "rating": 4.5,
+        "image_url": "https://example.com/images/organic_towels.jpg",
+        "image": "organic_towels.jpg"
+      }
+    },
+    {
+      "pk": 15,
+      "model": "products.product",
+      "fields": {
+        "sku": "HOM005",
+        "name": "Recycled Paper Notebook",
+        "description": "A eco-friendly notebook made from recycled paper, perfect for jotting down your thoughts.",
+        "price": 9.99,
+        "category": 3,
+        "rating": 4.3,
+        "image_url": "https://example.com/images/recycled_notebook.jpg",
+        "image": "recycled_notebook.jpg"
+      }
+    }
+  ]
+  
