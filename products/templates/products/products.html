@@ -15,6 +15,28 @@
                 <hr class="w-75 mb-1">
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center pt-3">
+                    <div class="dropdown">
+                        <button class="btn btn-dark-green dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort Products <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a>
+                            <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                 
+          
+
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
