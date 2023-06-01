@@ -239,6 +239,22 @@ BUTTONS & FA ICON STYLES
     -o-transition: all 0.35s ease-in-out;
 }
 
+/*Sourced from Code Institure Boutique Ado project*/
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+/*Sourced from Code Institure Boutique Ado project*/
+
+.btt-link {
+    cursor: pointer;
+}
+
 /* ====================
 FORM STYLES
 ==================== */
