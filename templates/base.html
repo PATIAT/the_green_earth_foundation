@@ -98,9 +98,9 @@
                     </div>
                 </div>
                 <div class="nav-link">
-                    <a class="{% if total %}green-text{% else %}dark-green-text{% endif %}" href="" aria-label="Cart">
+                    <a class="{% if total %}green-text{% else %}dark-green-text{% endif %}" href="{% url 'view_basket' %}" aria-label="Cart">
                         <span>
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-basket-shopping"></i>
                         </span>
                     </a>
                 </div>
