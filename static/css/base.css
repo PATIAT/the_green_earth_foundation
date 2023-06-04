@@ -251,7 +251,9 @@ BUTTONS & FA ICON STYLES
 
 /*Sourced from Code Institure Boutique Ado project*/
 
-.btt-link {
+.btt-link,
+.update-link,
+.remove-item {
     cursor: pointer;
 }
 
