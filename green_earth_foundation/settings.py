@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-hs28@_c&w=f#8oy0eb+4_r9s*@v-qe*og%3=e)7%s3x%ax3+&w
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-patiat-thegreenearthfou-5jlv76pdf6j.ws-eu98.gitpod.io'
+    '8000-patiat-thegreenearthfou-cyniz9fwxx9.ws-eu99.gitpod.io'
 ]
 
 
