@@ -326,6 +326,28 @@ DJANGO TOASTS STYLES
 }
 
 /* ====================
+ALL AUTH STYLES
+==================== */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 2.5px;
+    background-color: #fff;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+/* ====================
 MEDIA QUERY STYLES
 ==================== */
 
