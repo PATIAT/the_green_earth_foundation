@@ -111,8 +111,26 @@
                         {% endif %}
                     </div>
                 </div>
+                <div>
+                    <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" aria-label="User Options">
+                        <span class="icon">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="user-options">
+                        {% if request.user.is_authenticated %} {% if request.user.is_superuser %}
+                        <a href="#" class="dropdown-item">Add Article</a>
+                        <a href="#" class="dropdown-item">Edit Article</a>
+                        {% endif %}
+                        <a href="{% url 'articles:article_list' %}" class="dropdown-item">News Articles</a>
+                        {% else %}
+                        <a href="{% url 'articles:article_list' %}" class="dropdown-item">News Articles</a>
+                        {% endif %}
+                    </div>
+                </div>
                 <div class="nav-link">
-                    <a class="{% if total %}green-text{% else %}dark-green-text{% endif %}" href="{% url 'view_basket' %}" aria-label="Cart">
+                    <a class="{% if total %}green-text{% else %}dark-green-text{% endif %}" href="{% url 'view_basket' %}" aria-label="Basket">
                         <span>
                             <i class="fa-solid fa-basket-shopping"></i>
                         </span>

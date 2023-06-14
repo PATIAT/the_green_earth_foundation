@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'articles/css/article.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="header-container-large"></div>
+{% endblock %}
+
+{% block content %}
+
+<!-- All Articles -->
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2>Articles</h2>
+            <hr class="mb-1">
+        </div>
+    </div>
+
+    <div class="row">
+        {% for article in articles %}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="{{ article.image.url }}" class="card-img-top img-fluid" alt="Article Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ article.title }}</h5>
+                    <p class="card-text">{{ article.content|truncatechars:224 }}</p>
+                    <a href="{% url 'articles:article_detail' article.pk %}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="btt-button shadow-sm rounded-0 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>
+    </div>
+
+    {% endblock %}

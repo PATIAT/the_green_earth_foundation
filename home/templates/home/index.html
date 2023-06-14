@@ -18,7 +18,7 @@
 <div class="container pt-4 pb-5 mb-2">
     <div class="row">
         <div class="col-12">
-            <h3 class="mb-4 mt-2 text-center">Featured Products</h3>
+            <h3 class="mb-4 mt-2 text-center">Explore Products</h3>
         </div>
     </div>
 
@@ -31,35 +31,22 @@
     </div>
 </div>
 
-<!--Featured Categories -->
+<!--Featured Articles -->
 <div class="container-fluid" id="featured-categories">
     <div class="container pt-4 pb-5 mt-4 mb-2">
         <div class="row">
             <div class="col-12">
-                <h3 class="mb-3 mt-2 text-center text-white">Featured Categories</h3>
+                <h3 class="mb-3 mt-2 text-center text-white">News Articles</h3>
             </div>
         </div>
 
-        <!-- Enter Featured Categories here -->
+        <!-- Enter Featured Articles here -->
 
-    </div>
-</div>
-
-<!-- Latest News -->
-<div class="container pt-4 pb-5">
-    <div class="row">
-        <div class="col-12">
-            <h3 class="mb-4 mt-4 text-center">Latest News</h3>
-        </div>
-    </div>
-
-    <!-- Enter Latest News here -->
-
-    <div class="row">
-        <div class="col-12 text-center">
-            <a class="btn btn-dark-green" href="" role="button">Explore All News Articles</a>
+        <div class="row">
+            <div class="col-12 text-center">
+                <a class="btn btn-light-green" href="{% url 'articles:article_list' %}" role="button">Keep Informed</a>
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock %}
