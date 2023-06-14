@@ -55,7 +55,11 @@ def adjust_basket(request, item_id):
     """
 
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(round(float(request.POST.get('quantity'))))
+    float_quantity = float(request.POST.get('quantity'))
+    quantity = int(float_quantity)
+    if float_quantity != quantity:
+        messages.warning(request, "We're sorry, we can't accept decimal values for this product. The quantity value was rounded down to the nearest whole number.")
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
