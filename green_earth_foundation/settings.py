@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
 
 ALLOWED_HOSTS = [
-    '8000-patiat-thegreenearthfou-cyniz9fwxx9.ws-eu99.gitpod.io'
+    '8000-patiat-thegreenearthfou-cyniz9fwxx9.ws-eu100.gitpod.io'
 ]
 
 

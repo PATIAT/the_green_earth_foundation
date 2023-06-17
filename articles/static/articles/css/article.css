@@ -4,7 +4,7 @@
   }
 
   .restricted-image {
-    height: 300px; 
+    height: 400px; 
     object-fit: cover;
     width: 100%;
   }

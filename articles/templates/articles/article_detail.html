@@ -11,29 +11,60 @@
 
 {% block content %}
 <div class="overlay"></div>
-    <div class="container">
-        <div class="card">
-            {% if article.image %}
-                <a href="{{ article.image.url }}" target="_blank">
-                    <img src="{{ article.image.url }}" class="card-img-top img-fluid restricted-image" alt="{{ article.name }}">
-                </a>
-            {% else %}
-                <a href="">
-                    <img src="{{ MEDIA_URL }}noimage.png"  class="card-img-top img-fluid restricted-image" alt="{{ article.name }}">
-                </a>
-            {% endif %}
-            
-            <div class="card-body">
-                <h5 class="card-title">{{ article.title }}</h5>
-                <p class="card-text">{{ article.content }}</p>
+<div class="container">
+    <div class="card">
+        {% if article.image %}
+        <a href="{{ article.image.url }}" target="_blank">
+            <img src="{{ article.image.url }}" class="card-img-top img-fluid restricted-image" alt="{{ article.name }}">
+        </a>
+        {% else %}
+        <a href="">
+            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid restricted-image"
+                alt="{{ article.name }}">
+        </a>
+        {% endif %}
+
+        <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">{{ article.content }}</p>
+            <div class="row">
+                <div class="col-sm">
+                    <small><i class="fa-solid fa-user"></i> Article added by: {{ article.author }}</small>
+                </div>
+                <div class="col-sm">
+                    <small><i class="fa-solid fa-calendar-days"></i> Article posted: {{ article.created_on }}</small>
+                </div>
             </div>
-            {% if request.user.is_superuser %}
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <a href="{% url 'articles:article_list' %}" class="btn btn-dark-green rounded btn-sm mt-3 mr-2">
+                    <span>
+                        <span class="text-uppercase"><i class="fa-solid fa-chevron-left"></i> Back to All
+                            Articles</span>
+                    </span>
+                </a>
+                {% if request.user.is_superuser %}
                 <small class="ml-3">
-                    <a href="#">Edit</a> | 
-                    <a class="text-danger" href="#">Delete</a>
+                    <a href="{% url 'articles:article_update' article.pk %}"
+                        class="btn btn-light-green rounded btn-sm mt-3 mr-2">
+                        <span>
+                            <span class="text-uppercase"><i class="fa-solid fa-pen-to-square"></i> Update</span>
+                        </span>
+                    </a>
+                    <a href="{% url 'articles:article_delete' article.pk %}"
+                        class="btn btn-dark-green rounded btn-sm mt-3 mr-2">
+                        <span>
+                            <span class="text-uppercase"><i class="fa-solid fa-trash"></i> Delete</span>
+                        </span>
+                    </a>
                 </small>
-            {% endif %}
+                {% endif %}
+
+            </div>
+
         </div>
+
     </div>
+
+</div>
 </div>
 {% endblock %}
