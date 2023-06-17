@@ -141,8 +141,26 @@ HOME (INDEX.HTML) PAGE
 .jumbotron {
     background: url('/media/home-page-test-image.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 50vh;
+    height: 40vh;
     color: #F2F0F2;
+}
+
+.home-card-1 {
+    background: url('/media/bamboo_sunglasses.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    color: #F2F0F2;
+}
+
+.home-card-2 {
+    background: url('/media/recycled_notebook.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    color: #F2F0F2;
+}
+
+.card-home {
+    min-height: 490px;
 }
 
 .category-card-title {

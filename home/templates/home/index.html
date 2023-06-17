@@ -6,45 +6,38 @@
 {% endblock %}
 
 {% block content %}
+<!-- Primary CTA -->
 <div class="jumbotron jumbotron-fluid d-flex align-items-end">
     <div class="container">
         <h1 class="display-4">The Green Earth Foundation</h1>
         <p class="lead">Empowering Environmental Action for a Sustainable Future</p>
-        <a class="btn btn-red" href="" role="button">Donate Today</a>
+        <a class="btn btn-red" href="{% url 'products' %}" role="button">Donate Today <i class="fa-sharp fa-solid fa-heart"></i></a>
     </div>
 </div>
 
-<!--Featured Products -->
-<div class="container pt-4 pb-5 mb-2">
+<div class="container">
+    <!-- Secondary CTA -->
     <div class="row">
-        <div class="col-12">
-            <h3 class="mb-4 mt-2 text-center">Explore Products</h3>
-        </div>
-    </div>
-
-    <!-- Enter Featured Products here -->
-
-    <div class="row">
-        <div class="col-12 text-center">
-            <a class="btn btn-dark-green" href="{% url 'products' %}" role="button">Explore All Products</a>
-        </div>
-    </div>
-</div>
-
-<!--Featured Articles -->
-<div class="container-fluid" id="featured-categories">
-    <div class="container pt-4 pb-5 mt-4 mb-2">
-        <div class="row">
-            <div class="col-12">
-                <h3 class="mb-3 mt-2 text-center text-white">News Articles</h3>
+        <div class="col-md-6">
+            <div class="card card-home">
+                <span class="card-img-top home-card-1" alt="Products"></span>
+                <div class="card-body">
+                    <h5 class="card-title">Green Threads: Fashionably Eco-Conscious</h5>
+                    <p class="card-text">Inspiring Style, Empowering Sustainability</p>
+                    <a href="{% url 'products' %}" class="btn btn-light-green">Shop Now <i class="fa-solid fa-store"></i></a>
+                </div>
             </div>
         </div>
 
-        <!-- Enter Featured Articles here -->
-
-        <div class="row">
-            <div class="col-12 text-center">
-                <a class="btn btn-light-green" href="{% url 'articles:article_list' %}" role="button">Keep Informed</a>
+        <!-- Tertiary CTA -->
+        <div class="col-md-6">
+            <div class="card card-home">
+                <span class="card-img-top home-card-2" alt="Articles"></span>
+                <div class="card-body">
+                    <h5 class="card-title">EcoBuzz: Unveiling Environmental Stories</h5>
+                    <p class="card-text">Stay Informed, Drive Change</p>
+                    <a href="{% url 'articles:article_list' %}" class="btn btn-dark-green">Read More <i class="fa-brands fa-readme"></i></a>
+                </div>
             </div>
         </div>
     </div>
