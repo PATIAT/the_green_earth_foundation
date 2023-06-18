@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'team/css/team.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="header-container-large"></div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="card">
+        {% if member.image %}
+        <a href="{{ member.image.url }}" target="_blank">
+            <img src="{{ member.image.url }}" class="card-img-top img-fluid restricted-image" alt="{{ member.name }}">
+        </a>
+        {% else %}
+        <a href="">
+            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid restricted-image"
+                alt="{{ member.name }}">
+        </a>
+        {% endif %}
+
+        <div class="card-body">
+            <h5 class="card-title">{{ member.name }}</h5>
+            <p class="card-text">{{ member.biography }}</p>
+            <div class="row">
+                <div class="col-sm">
+                    <small><i class="fa-solid fa-calendar-days"></i> Age: {{ member.age }}</small>
+                </div>
+                <div class="col-sm">
+                    <small><i class="fa-sharp fa-solid fa-heart"></i> Passion: {{ member.passion }}</small>
+                </div>
+                <div class="col-sm">
+                    <small><i class="fa-solid fa-globe"></i> Favourite Place: {{ member.favorite_place }}</small>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <a href="{% url 'team:team_members' %}" class="btn btn-dark-green rounded btn-sm mt-3 mr-2">
+                    <span>
+                        <span class="text-uppercase"><i class="fa-solid fa-chevron-left"></i> Back to Team
+                            Members</span>
+                    </span>
+                </a>
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'team:edit_team_member' member.pk %}"
+                        class="btn btn-light-green rounded btn-sm mt-3 mr-2">
+                        <span>
+                            <span class="text-uppercase"><i class="fa-solid fa-pen-to-square"></i> Update</span>
+                        </span>
+                    </a>
+                    <a href="{% url 'team:delete_team_member' member.pk %}"
+                        class="btn btn-dark-green rounded btn-sm mt-3 mr-2">
+                        <span>
+                            <span class="text-uppercase"><i class="fa-solid fa-trash"></i> Delete</span>
+                        </span>
+                    </a>
+                </small>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+{% endblock %}

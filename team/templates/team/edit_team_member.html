@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                <h2 class="mb-4">Edit Article</h2>
+                <h2 class="mb-4">Edit Team Member</h2>
                 <h5 class="text-muted"></h5>
                 <hr>
             </div>
@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'articles:article_update' article.pk %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'team:edit_team_member' member.pk %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         {% if field.name != 'image' %}
@@ -29,8 +29,8 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-light-green" href="{% url 'articles:article_list' %}">Cancel <i class="fa-solid fa-ban"></i></a>
-                        <button class="btn btn-dark-green" type="submit">Update Article <i class="fa-solid fa-pen-to-square"></i></button>
+                        <a class="btn btn-light-green" href="{% url 'team:team_members' %}">Cancel <i class="fa-solid fa-ban"></i></a>
+                        <button class="btn btn-dark-green" type="submit">Update Team Member <i class="fa-solid fa-pen-to-square"></i></button>
                     </div>
                 </form>
             </div>            

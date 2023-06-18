@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import TeamMember
+from .forms import TeamMemberForm
 
 
 # Create your views here.
@@ -30,7 +31,7 @@ def add_team_member(request):
             return redirect('team:team_members')
     else:
         form = TeamMemberForm()
-    return render(request, 'team/add_team_member.html', {'form': form})
+    return render(request, 'team/add_team_member.html', {'form': form, 'url_name': 'team:add_team_member'})
 
 
 def edit_team_member(request, pk):
