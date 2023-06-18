@@ -11,35 +11,47 @@
     <div class="container">
         <h1 class="display-4">The Green Earth Foundation</h1>
         <p class="lead">Empowering Environmental Action for a Sustainable Future</p>
-        <a class="btn btn-red" href="{% url 'products' %}" role="button">Donate Today <i class="fa-sharp fa-solid fa-heart"></i></a>
+        <a class="btn btn-red" href="{% url 'products' %}" role="button">Donate Today <i
+                class="fa-sharp fa-solid fa-heart"></i></a>
     </div>
 </div>
 
 <div class="container">
-    <!-- Secondary CTA -->
     <div class="row">
+        <!-- Secondary CTA -->
         <div class="col-md-6">
-            <div class="card card-home">
+            <div class="card card-home d-flex flex-column">
                 <span class="card-img-top home-card-1" alt="Products"></span>
-                <div class="card-body">
-                    <h5 class="card-title">Green Threads: Fashionably Eco-Conscious</h5>
-                    <p class="card-text">Inspiring Style, Empowering Sustainability</p>
-                    <a href="{% url 'products' %}" class="btn btn-light-green">Shop Now <i class="fa-solid fa-store"></i></a>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title">Green Threads: Fashionably Eco-Conscious</h5>
+                        <p class="card-text">Inspiring Style, Empowering Sustainability</p>
+                    </div>
+                    <div>
+                        <a href="{% url 'products' %}" class="btn btn-light-green mt-auto">Shop Now <i
+                                class="fa-solid fa-store"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Tertiary CTA -->
         <div class="col-md-6">
-            <div class="card card-home">
+            <div class="card card-home d-flex flex-column">
                 <span class="card-img-top home-card-2" alt="Articles"></span>
-                <div class="card-body">
-                    <h5 class="card-title">EcoBuzz: Unveiling Environmental Stories</h5>
-                    <p class="card-text">Stay Informed, Drive Change</p>
-                    <a href="{% url 'articles:article_list' %}" class="btn btn-dark-green">Read More <i class="fa-brands fa-readme"></i></a>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title">EcoBuzz: Unveiling Environmental Stories</h5>
+                        <p class="card-text">Stay Informed, Drive Change</p>
+                    </div>
+                    <div>
+                        <a href="{% url 'articles:article_list' %}" class="btn btn-dark-green mt-auto">Read More <i
+                                class="fa-brands fa-readme"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 {% endblock %}
