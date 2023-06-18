@@ -1,10 +1,28 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-container-large"></div>
+{% endblock %}
 
 {% block content %}
-<h2>Delete Team Member</h2>
-<p>Are you sure you want to delete the team member: {{ member.name }}?</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Delete</button>
-</form>
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <hr>
+            <h2 class="mb-4">Delete Team Member</h2>
+            <h5 class="text-muted"></h5>
+            <hr>
+        </div>
+    </div>
+
+    <h3>Are you sure you want to delete "{{ member.name }}"?</h3>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete <i class="fa-solid fa-trash"></i></button>
+        <a href="{% url 'team:team_members' %}" class="btn btn-light-green">Cancel <i class="fa-solid fa-ban"></i></a>
+    </form>
+
+</div>
 {% endblock %}
