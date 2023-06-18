@@ -88,6 +88,12 @@ NAVIGATION STYLES
     color: #284030;
 }
 
+@media (max-width: 415px) {
+    .navbar-brand {
+      display: none;
+    }
+  }
+
 /* ====================
 BANNER STYLES
 ==================== */
