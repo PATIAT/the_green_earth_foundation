@@ -13,12 +13,30 @@
         <div class="col text-center mt-3">
             <h2>Products</h2>
             {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="btn btn-light-green btn-sm">{{ c.friendly_name }}</span>
-                    </a>
+            <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                <span class="btn btn-light-green btn-sm">{{ c.friendly_name }}</span>
+            </a>
             {% endfor %}
             <hr class="w-75 mb-1">
         </div>
+    </div>
+
+    <!-- Page Description -->
+    <div class="container">
+        <p>
+            Welcome to The Green Earth Foundation! Here, you'll find a carefully curated selection of
+            environmentally friendly merchandise that not only showcases your love for nature but also contributes to
+            our
+            conservation efforts. Explore our collection of sustainable clothing, accessories, and home goods, all
+            thoughtfully designed with a focus on ethical sourcing and eco-friendly materials. From organic cotton
+            t-shirts
+            to recycled accessories and eco-conscious home decor, our products embody our commitment to a greener
+            planet.
+            Every purchase you make supports our environmental initiatives, helping us protect and preserve the Earth's
+            natural wonders for future generations. Shop with purpose and make a positive impact with every item you
+            choose
+            from The Green Earth Foundation's shop. Together, let's create a sustainable and vibrant world!
+        </p>
     </div>
 
     <!-- Sort Dropdown List -->
@@ -34,7 +52,8 @@
                         <a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a>
                         <a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a>
                         <a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a>
-                        <a class="dropdown-item" href="{% url 'products' %}?category=clothing,accessories,home">All Products</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?category=clothing,accessories,home">All
+                            Products</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +91,9 @@
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span class="dark-green-text"><a href="{% url 'products' %}?category=clothing,accessories,home">All Products</a> | </span>
+                        <span class="dark-green-text"><a
+                                href="{% url 'products' %}?category=clothing,accessories,home">All Products</a> |
+                        </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} found for
                         <strong>"{{ search_term }}"</strong>{% endif %}
@@ -81,9 +102,6 @@
             </div>
         </div>
     </div>
-            
-
-    
 
     <div class="row">
         <div class="product-container col-10 offset-1">
@@ -123,12 +141,6 @@
                                     {% else %}
                                     <small class="text-muted">No Rating</small>
                                     {% endif %}
-                                    {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                        </small>
-                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -162,48 +174,48 @@
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        // Scroll to top functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            var bttLink = document.querySelector('.btt-link');
-            bttLink.addEventListener('click', function (e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+{{ block.super }}
+<script type="text/javascript">
+    // Scroll to top functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        var bttLink = document.querySelector('.btt-link');
+        bttLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
+    });
 
-        // Sort selector functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            var sortSelector = document.getElementById('sort-selector');
-            sortSelector.addEventListener('change', function () {
-                var selector = this;
-                var currentUrl = new URL(window.location.href);
+    // Sort selector functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        var sortSelector = document.getElementById('sort-selector');
+        sortSelector.addEventListener('change', function () {
+            var selector = this;
+            var currentUrl = new URL(window.location.href);
 
-                var selectedVal = selector.value;
-                if (selectedVal !== "reset") {
-                    var sort = selectedVal.split("_")[0];
-                    var direction = selectedVal.split("_")[1];
+            var selectedVal = selector.value;
+            if (selectedVal !== "reset") {
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
 
-                    currentUrl.searchParams.set("sort", sort);
-                    currentUrl.searchParams.set("direction", direction);
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
 
-                    window.location.replace(currentUrl);
-                } else {
-                    currentUrl.searchParams.delete("sort");
-                    currentUrl.searchParams.delete("direction");
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
 
-                    window.location.replace(currentUrl);
-                }
-            });
+                window.location.replace(currentUrl);
+            }
         });
-    </script>
+    });
+</script>
 {% endblock %}
