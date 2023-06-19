@@ -145,21 +145,30 @@ HOME (INDEX.HTML) PAGE
 ==================== */
 
 .jumbotron {
-    background: url('/media/home-page-test-image.jpg') no-repeat center center fixed;
+    background: url('/media/home_page_main.jpg') no-repeat center center;
     background-size: cover;
     height: 40vh;
     color: #F2F0F2;
+    padding-bottom: 3rem; /* Add padding to create space below the text */
+}
+
+@media (max-width: 576px) {
+    .jumbotron {
+        height: auto; /* Reset the height for smaller screens */
+        padding-top: 4rem; /* Adjust the top padding to create more space above the text */
+        padding-bottom: 3rem; /* Adjust the bottom padding to create more space below the text */
+    }
 }
 
 .home-card-1 {
-    background: url('/media/bamboo_sunglasses.jpg') no-repeat center center;
+    background: url('/media/home_page_products.jpg') no-repeat center center;
     background-size: cover;
     height: 300px;
     color: #F2F0F2;
 }
 
 .home-card-2 {
-    background: url('/media/recycled_notebook.jpg') no-repeat center center;
+    background: url('/media/home_page_news.jpg') no-repeat center center;
     background-size: cover;
     height: 300px;
     color: #F2F0F2;
