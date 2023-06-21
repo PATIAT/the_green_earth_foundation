@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 # Create your tests here.
 class TestArticlesViews(TestCase):
 
-    def test_get_contact_page(self):
+    def test_get_articles_page(self):
         response = self.client.get('/articles/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'articles/article_list.html')
@@ -24,4 +24,4 @@ class TestArticleModels(TestCase):
             author=author,
             content="This is test article content.",
         )
-        self.assertTrue(article)
+        self.assertTrue(article.title)
