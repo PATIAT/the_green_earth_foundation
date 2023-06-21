@@ -17,7 +17,7 @@ class TestArticleModels(TestCase):
         article = Article(title="Test Title")
         self.assertEqual(str(article), article.title)
 
-    def test_replied_defaults_to_false(self):
+    def test__article_content(self):
         author = User.objects.create(username="Test Author")
         article = Article.objects.create(
             title="Test Title",
