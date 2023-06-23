@@ -55,13 +55,13 @@ h6 {
 /*Sourced from Code Institure Boutique Ado project*/
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: #F2F0F2;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #F2F0F2;
+    z-index: -1;
 }
 
 /* ====================
@@ -90,9 +90,9 @@ NAVIGATION STYLES
 
 @media (max-width: 415px) {
     .navbar-brand {
-      display: none;
+        display: none;
     }
-  }
+}
 
 /* ====================
 BANNER STYLES
@@ -103,7 +103,7 @@ BANNER STYLES
 }
 
 #banner a {
-    color:#F2F0F2;
+    color: #F2F0F2;
 }
 
 /* ====================
@@ -115,7 +115,7 @@ footer {
     min-height: 10vh;
     width: 100%;
 }
-  
+
 footer .row {
     padding-top: 20px;
     text-align: center;
@@ -135,7 +135,7 @@ footer .row {
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
-  
+
 .tagline {
     font-style: italic;
 }
@@ -149,14 +149,18 @@ HOME (INDEX.HTML) PAGE
     background-size: cover;
     height: 40vh;
     color: #F2F0F2;
-    padding-bottom: 3rem; /* Add padding to create space below the text */
+    padding-bottom: 3rem;
+    /* Add padding to create space below the text */
 }
 
 @media (max-width: 576px) {
     .jumbotron {
-        height: auto; /* Reset the height for smaller screens */
-        padding-top: 4rem; /* Adjust the top padding to create more space above the text */
-        padding-bottom: 3rem; /* Adjust the bottom padding to create more space below the text */
+        height: auto;
+        /* Reset the height for smaller screens */
+        padding-top: 4rem;
+        /* Adjust the top padding to create more space above the text */
+        padding-bottom: 3rem;
+        /* Adjust the bottom padding to create more space below the text */
     }
 }
 
@@ -228,8 +232,7 @@ BUTTONS & FA ICON STYLES
 
 .btn-red:hover,
 .btn-red:active,
-.btn-red:focus
- {
+.btn-red:focus {
     background-color: #284030;
     color: #F2F0F2;
     transition: all 0.35s ease-in-out;
@@ -245,8 +248,7 @@ BUTTONS & FA ICON STYLES
 
 .btn-dark-green:hover,
 .btn-dark-green:active,
-.btn-dark-green:focus
- {
+.btn-dark-green:focus {
     background-color: #748C4F;
     color: #F2F0F2;
     transition: all 0.35s ease-in-out;
@@ -262,8 +264,7 @@ BUTTONS & FA ICON STYLES
 
 .btn-light-green:hover,
 .btn-light-green:active,
-.btn-light-green:focus
- {
+.btn-light-green:focus {
     background-color: #284030;
     color: #F2F0F2;
     transition: all 0.35s ease-in-out;
@@ -338,7 +339,7 @@ input.larger {
     transform: scale(2);
     margin-right: 0.5rem;
     accent-color: #474d23;
-  }
+}
 
 /* Product Form */
 
@@ -392,7 +393,8 @@ ALL AUTH STYLES
 ==================== */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
+    margin-top: 1.5rem;
+    /* mt-4 */
 }
 
 .allauth-form-inner-content input {
@@ -425,7 +427,7 @@ MEDIA QUERY STYLES
     .header-container-lg {
         padding-top: 144px;
     }
-    
+
     .header-container-sm {
         padding-top: 96px;
     }

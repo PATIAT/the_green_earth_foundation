@@ -21,7 +21,8 @@
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Delete <i class="fa-solid fa-trash"></i></button>
-        <a href="{% url 'articles:article_list' %}" class="btn btn-light-green">Cancel <i class="fa-solid fa-ban"></i></a>
+        <a href="{% url 'articles:article_list' %}" class="btn btn-light-green">Cancel <i
+                class="fa-solid fa-ban"></i></a>
     </form>
 
 </div>

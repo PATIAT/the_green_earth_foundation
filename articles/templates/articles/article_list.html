@@ -37,14 +37,15 @@
         <div class="col-md-4 mb-3">
             <div class="card">
                 {% if article.image %}
-                    <a href="{{ article.image.url }}" target="_blank">
-                        <img src="{{ article.image.url }}" class="card-img-top img-fluid restricted-image" alt="{{ article.name }}">
-                    </a>
-                    {% else %}
-                    <a href="">
-                        <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid restricted-image"
-                            alt="{{ article.name }}">
-                    </a>
+                <a href="{{ article.image.url }}" target="_blank">
+                    <img src="{{ article.image.url }}" class="card-img-top img-fluid restricted-image"
+                        alt="{{ article.name }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid restricted-image"
+                        alt="{{ article.name }}">
+                </a>
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ article.title }}</h5>
@@ -60,7 +61,8 @@
                     </div>
                     <hr>
                     <p class="card-text">{{ article.content|truncatechars:224 }}</p>
-                    <a href="{% url 'articles:article_detail' article.pk %}" class="btn btn-dark-green rounded float-right">Read More <i class="fa-brands fa-readme"></i></a>
+                    <a href="{% url 'articles:article_detail' article.pk %}"
+                        class="btn btn-dark-green rounded float-right">Read More <i class="fa-brands fa-readme"></i></a>
                 </div>
             </div>
         </div>

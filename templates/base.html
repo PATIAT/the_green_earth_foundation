@@ -12,9 +12,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/media/the-green-earth-foundation-favicon-white-bg.png">
     <meta name="description"
-    content="Green Earth Foundation - Empowering Environmental Action for a Sustainable Future">
+        content="Green Earth Foundation - Empowering Environmental Action for a Sustainable Future">
     <meta name="keywords"
-    content="donate environment sustainability climate climate change weather action donate charity cause">
+        content="donate environment sustainability climate climate change weather action donate charity cause">
     <meta name="author" content="The Green Earth Foundation">
     {% endblock %}
 
@@ -68,7 +68,8 @@
                     </a>
                 </div>
                 <div>
-                    <a class="d-none d-md-block btn btn-dark-green" href="{% url 'products' %}">Support Us Today <i class="fa-sharp fa-solid fa-heart"></i></a>
+                    <a class="d-none d-md-block btn btn-dark-green" href="{% url 'products' %}">Support Us Today <i
+                            class="fa-sharp fa-solid fa-heart"></i></a>
                 </div>
 
                 <!-- Search Bar -->
@@ -94,7 +95,8 @@
                         <a href="{% url 'products' %}?category=clothing" class="dropdown-item">Clothing</a>
                         <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a>
                         <a href="{% url 'products' %}?category=home" class="dropdown-item">Home</a>
-                        <a href="{% url 'products' %}?category=clothing,accessories,home" class="dropdown-item">All Products</a>
+                        <a href="{% url 'products' %}?category=clothing,accessories,home" class="dropdown-item">All
+                            Products</a>
                     </div>
                 </div>
 
@@ -159,13 +161,14 @@
 
                 <!-- Shopping Basket -->
                 <div class="nav-link">
-                    <a class="{% if total %}green-text{% else %}dark-green-text{% endif %}" href="{% url 'view_basket' %}" aria-label="Basket">
+                    <a class="{% if total %}green-text{% else %}dark-green-text{% endif %}"
+                        href="{% url 'view_basket' %}" aria-label="Basket">
                         <span class="icon" data-toggle="tooltip" data-placement="bottom" title="Shopping Basket">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </span>
                     </a>
                 </div>
-                
+
             </nav>
 
             <div class="collapse" id="search-bar">
@@ -194,21 +197,21 @@
     </header>
 
     {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -274,7 +277,7 @@
     </script>
     {% endblock %}
 
-    
+
 </body>
 
 </html>
