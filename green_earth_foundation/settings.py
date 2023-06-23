@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 if os.path.exists(".env"):
     from dotenv import load_dotenv
@@ -30,7 +31,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
 
 ALLOWED_HOSTS = [
-    '8000-patiat-thegreenearthfou-cyniz9fwxx9.ws-eu100.gitpod.io'
+    '8000-patiat-thegreenearthfou-cyniz9fwxx9.ws-eu100.gitpod.io',
+    'green-earth-foundation.herokuapp.com',
+    'localhost',
 ]
 
 
@@ -126,12 +129,17 @@ WSGI_APPLICATION = 'green_earth_foundation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
@@ -189,3 +197,4 @@ DEFAULT_FROM_EMAIL = 'greenearthfoundation@example.com'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
