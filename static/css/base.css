@@ -422,7 +422,15 @@ MEDIA QUERY STYLES
     }
 }
 
-/* Search and book banner adjustments */
+/* Reduces padding on small screen sizes */
+@media (max-width: 576px) {
+    .nav-link {
+        font-size: 1.25rem;
+        padding: 0.55rem;
+    }
+}
+
+/* Search banner adjustments */
 @media (max-width: 425px) {
     .header-container-lg {
         padding-top: 144px;

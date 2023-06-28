@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", '')
 DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
 
 ALLOWED_HOSTS = [
-    '8000-patiat-thegreenearthfou-cyniz9fwxx9.ws-eu100.gitpod.io',
+    '8000-patiat-thegreenearthfou-cyniz9fwxx9.ws-eu101.gitpod.io',
     'green-earth-foundation.herokuapp.com',
     'green-earth-foundation-d0cf978a36b8.herokuapp.com',
     'localhost',
