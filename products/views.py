@@ -123,7 +123,8 @@ def edit_product(request, product_id):
         else:
             messages.error(
                 request,
-                'Failed to update product. Please check the form and try again.')
+                'Failed to update product. \
+                    Please check the form and try again.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are now editing {product.name}')

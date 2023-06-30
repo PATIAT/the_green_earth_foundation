@@ -32,12 +32,14 @@ def add_to_basket(request, item_id):
                 basket[item_id]['items_by_size'][size] += quantity
                 messages.success(
                     request,
-                    f'Updated size {size.upper()} {product.name} quantity to {basket[item_id]["items_by_size"][size]}')
+                    f'Updated size {size.upper()} {product.name} \
+                        quantity to {basket[item_id]["items_by_size"][size]}')
             else:
                 basket[item_id]['items_by_size'][size] = quantity
                 messages.success(
                     request,
-                    f'Added size {size.upper()} {product.name} to your basket!')
+                    f'Added size {size.upper()} \
+                        {product.name} to your basket!')
         else:
             basket[item_id] = {'items_by_size': {size: quantity}}
             messages.success(
@@ -68,7 +70,11 @@ def adjust_basket(request, item_id):
     float_quantity = float(request.POST.get('quantity'))
     quantity = int(float_quantity)
     if float_quantity != quantity:
-        messages.warning(request, "We're sorry, we can't accept decimal values for this product. The quantity value was rounded down to the nearest whole number.")
+        messages.warning(
+            request,
+            "We're sorry, we can't accept decimal values for this product. \
+                The quantity value was rounded down \
+                    to the nearest whole number.")
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
@@ -79,14 +85,16 @@ def adjust_basket(request, item_id):
             basket[item_id]['items_by_size'][size] = quantity
             messages.success(
                 request,
-                f'Updated size {size.upper()} {product.name} quantity to {basket[item_id]["items_by_size"][size]}')
+                f'Updated size {size.upper()} {product.name} \
+                    quantity to {basket[item_id]["items_by_size"][size]}')
         else:
             del basket[item_id]['items_by_size'][size]
             if not basket[item_id]['items_by_size']:
                 basket.pop(item_id)
             messages.success(
                 request,
-                f'Removed size {size.upper()} {product.name} from your basket!')
+                f'Removed size {size.upper()} \
+                    {product.name} from your basket!')
     else:
         if quantity > 0:
             basket[item_id] = quantity
@@ -121,7 +129,8 @@ def remove_from_basket(request, item_id):
                 basket.pop(item_id)
             messages.success(
                 request,
-                f'Removed size {size.upper()} {product.name} from your basket!')
+                f'Removed size {size.upper()} \
+                    {product.name} from your basket!')
         else:
             basket.pop(item_id)
             messages.success(
