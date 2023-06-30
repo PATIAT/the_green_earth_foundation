@@ -39,7 +39,10 @@ def add_team_member(request):
             return redirect('team:team_members')
     else:
         form = TeamMemberForm()
-    return render(request, 'team/add_team_member.html', {'form': form, 'url_name': 'team:add_team_member'})
+    return render(
+        request,
+        'team/add_team_member.html',
+        {'form': form, 'url_name': 'team:add_team_member'})
 
 
 @login_required
@@ -60,7 +63,10 @@ def edit_team_member(request, pk):
             return redirect('team:team_members')
     else:
         form = TeamMemberForm(instance=member)
-    return render(request, 'team/edit_team_member.html', {'form': form, 'member': member})
+    return render(
+        request,
+        'team/edit_team_member.html',
+        {'form': form, 'member': member})
 
 
 @login_required

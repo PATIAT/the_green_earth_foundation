@@ -7,12 +7,18 @@ from .forms import ArticleForm
 
 def article_list(request):
     articles = Article.objects.all()
-    return render(request, 'articles/article_list.html', {'articles': articles})
+    return render(
+        request,
+        'articles/article_list.html',
+        {'articles': articles})
 
 
 def article_detail(request, pk):
     article = get_object_or_404(Article, pk=pk)
-    return render(request, 'articles/article_detail.html', {'article': article})
+    return render(
+        request,
+        'articles/article_detail.html',
+        {'article': article})
 
 
 @login_required
@@ -29,10 +35,15 @@ def article_create(request):
             messages.success(request, 'Article created successfully.')
             return redirect('articles:article_list')
         else:
-            messages.error(request, 'Failed to create the article. Please check the form.')
+            messages.error(
+                request,
+                'Failed to create the article. Please check the form.')
     else:
         form = ArticleForm()
-    return render(request, 'articles/article_create.html', {'form': form, 'action': 'Create'})
+    return render(
+        request,
+        'articles/article_create.html',
+        {'form': form, 'action': 'Create'})
 
 
 @login_required
@@ -50,10 +61,15 @@ def article_update(request, pk):
             messages.success(request, 'Article updated successfully.')
             return redirect('articles:article_list')
         else:
-            messages.error(request, 'Failed to update the article. Please check the form.')
+            messages.error(
+                request,
+                'Failed to update the article. Please check the form.')
     else:
         form = ArticleForm(instance=article)
-    return render(request, 'articles/article_form.html', {'form': form, 'article': article})
+    return render(
+        request,
+        'articles/article_form.html',
+        {'form': form, 'article': article})
 
 
 @login_required
@@ -68,4 +84,7 @@ def article_delete(request, pk):
         article.delete()
         messages.success(request, 'Article deleted successfully.')
         return redirect('articles:article_list')
-    return render(request, 'articles/article_confirm_delete.html', {'article': article})
+    return render(
+        request,
+        'articles/article_confirm_delete.html',
+        {'article': article})

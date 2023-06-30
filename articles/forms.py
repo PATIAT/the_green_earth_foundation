@@ -8,4 +8,6 @@ class ArticleForm(forms.ModelForm):
         model = Article
         fields = ('title', 'author', 'image_url', 'image', 'content')
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(
+        label='Image', required=False,
+        widget=CustomClearableFileInput)
