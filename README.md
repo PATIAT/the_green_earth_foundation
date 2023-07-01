@@ -1,13 +1,12 @@
-<h2 align="left"><img src="media/the-green-earth-foundation-logo-white-bg.png" height="200px" width="200px"></h2>
+<h2 align="left"><img src="docs/README/the-green-earth-foundation-logo-white-bg.png" height="200px" width="200px"></h2>
 
 # The Green Earth Foundation
-
 ### Empowering Environmental Action for a Sustainable Future
 
 
 ## Milestone Project 4 - Full Stack Development
 
-<h2 align="left"><img src=" "></h2>
+<h2 align="left"><img src="docs/README/website-mockup.png" width="600px"></h2>
 
 ### The Green Earth Foundation is a fictional web application that offers:
 - Eco-friendly merchandise: Explore a range of sustainable clothing and accessories that support our environmental initiatives.
@@ -16,12 +15,12 @@
 - Informative environmental news: Read articles and news updates related to environmental issues and stay connected with our initiatives.
 - Personalised profile and past orders: Create an account, view order history, and manage details for a personalised experience.
 
-* This is my Milestone Project 4 submission for Code Institute's Diploma in Web Application Development. The Green Earth Foundation is built using Django full-stack framework and uses a Relational Database. Technologies used include HTML, CSS, JavaScript, Python and Stripe payments.
+#### This is my Milestone Project 4 submission for Code Institute's Diploma in Web Application Development. The Green Earth Foundation is built using Django full-stack framework and uses a Relational Database. Technologies used include HTML, CSS, JavaScript, Python and Stripe payments.
 
 * Key features include:
 - Merchandise Store: Explore and purchase a curated selection of eco-friendly clothing and accessories that contribute to environmental causes.
 - Seamless Shopping Experience: Easily add items to your shopping bag, update quantities, and proceed to a secure checkout process.
-- Secure Donations: Contribute to the charity's mission through secure one-time donations or opt for regular donations with the convenience of Stripe subscriptions.
+- Secure Donations: Contribute to the charity's mission through secure one-time donations via purchase of products.
 - Personalised Profiles: Create an account to access your profile, view order history, manage delivery addresses, and stay connected with the charity's updates.
 - Environmental News Hub: Stay informed with articles and news updates on environmental matters, including updates from the charity's events and initiatives.
 - Integrated Payment System: Experience secure and hassle-free payments with integration of Stripe, offering a variety of payment methods and a streamlined checkout process.
@@ -29,11 +28,11 @@
 
 ## Live Project
 
-[View the live project here.]()
+[View the live project here.](https://green-earth-foundation-d0cf978a36b8.herokuapp.com/)
 
 ## Repository
 
-[Find the project repository here.]()
+[Find the project repository here.](https://github.com/PATIAT/the_green_earth_foundation)
 
 # Table of Contents
 
@@ -49,8 +48,6 @@
   + [Cards](#cards)
 - [Features](#features)
 - [Future Features](#future-features)
-  + [User Experience Features](#user-experience-features)
-  + [Development Features](#development-features)
 - [Wireframes](#wireframes)
 - [Data Model](#data-model)
 - [Technologies used](#technologies-used)
@@ -58,7 +55,6 @@
   + [Frameworks & Libraries](#frameworks--libraries)
   + [Storage & Hosting](#storage--hosting)
   + [Payments](#payments)
-  + [APIs](#apis)
   + [IDE & Version Control](#ide--version-control)
   + [Other Tools](#other-tools)
   + [Testing & Code Validation](#testing-code-validation)
@@ -102,7 +98,7 @@
 | Admin and Store Management | 
 | 21             | Business Owner  | I want to have control over the content on the Home page                                        | Update the website's main landing page, calls to action, and featured content                                |
 | 21            | Business Owner (Superuser)   | I want to be able to create, edit, update, and delete products in the inventory.                                   | ...manage the product offerings, ensure accurate information, and keep the inventory up to date.                                               |
-| 22            | Business Owner (Superuser)   | I want to have the ability to publish articles related to food safety and compliance to educate site users.       | ...share valuable insights and knowledge with the site users to promote awareness and enhance their understanding.                                |
+| 22            | Business Owner (Superuser)   | I want to have the ability to publish articles related to environmental issues to educate site users.       | ...share valuable insights and knowledge with the site users to promote awareness and enhance their understanding.                                | 
 | 23            | Business Owner (Superuser)   | I want to manage user accounts and have administrative privileges to ensure the smooth operation of the website.   | ...have control over user management and maintain site security.                                               |
 
 ## Design
@@ -127,7 +123,7 @@ Overall, the aesthetic of the application strives to create a visually appealing
 
 - I used the [Adobe Colour Wheel and Accessibility Checker]( https://color.adobe.com/create/color-wheel) to ensure my chosen colour palette had sufficient colour ratio for visually impaired users.
 
-<h2 align="left"><img src=""></h2>
+<h2 align="left"><img src="docs/README/colour-pallette.jpeg" width="600px"></h2>
 
 ### Typography
 
@@ -148,8 +144,6 @@ The imagery used in the application aims to inspire, educate, and create an emot
 - Environmental Impact: Visual representations illustrating the consequences of environmental degradation, such as pollution, deforestation, and climate change. These images serve as a reminder of the urgency to address these issues and encourage users to take action.
 
 - Almost all the images are displayed in bootstrap cards with an image cap. This allows the content to be structured and organised in a consistent fashion.
-
-- Although not always appropriate, the admin can choose to set a featured image. This is the image that appears first by default. There is a fallback 'holding' image if the admin does not set a featured image.
 
 - Consistent aspect ratios have been used to bring visual continuity to the site across different page layouts.
 
@@ -192,7 +186,7 @@ The imagery used in the application aims to inspire, educate, and create an emot
 
 ## Homepage
 
-- Jumbotron with series of images
+- Main image and CTA
 - Featured Merchandise (products)
 - Featured News
 - Call To Action (CTA) buttons
@@ -209,16 +203,9 @@ The imagery used in the application aims to inspire, educate, and create an emot
   - Category (A-Z)
   - Category (Z-A)
 - Count of products on page
-- Product Cards, featuring:
-  - Featured Image (if appropriate) or Fallback Image
-  - Image carousel if multiple images
-  - Facility tooltips
-  - Average Rating
-  - Buy button
 
 ## Product Detail Page
   - Featured Image or Fallback Image
-  - Image carousel if multiple images
   - Product name
   - Product category tag
   - Review (average rating)
@@ -270,8 +257,8 @@ The imagery used in the application aims to inspire, educate, and create an emot
 - Superuser only access
 
 # Future Features
-
-## User Experience Features
+- Subscription donations
+- Multiple product images
 
 # Wireframes
 
@@ -279,13 +266,15 @@ The imagery used in the application aims to inspire, educate, and create an emot
 
 # Data Model
 
-## Considerations
-
-A few of the key points I had to consider when designed my database schema was:
-
 ## Database Schema
 
 The following Data models were used:
+
+- Articles - stores information on each of the news articles.
+- Basket - stores information on the users shopping basket.
+- Products - stores information on each of the products.
+- User Profile - stores user information (relates to django allauth user model which is not included here).
+- Teams - stores information on each of the team members.
 
 This diagram outlines each model's fields and illustrates the relationship between the models:
 
@@ -399,29 +388,42 @@ The following tools were used for testing and code validation. You can see resul
 
 # Credits
 
+- Please refer [here](docs/CREDITS.md) for more information on the credits for the Green Earth Foundation website
+
 ## Code
 
 ### Code Institute:
   - The groundwork for this website was sourced from the Code Institute’s Boutique Ado walkthrough project which is an e-commerce website. This website has been customised wherever possible. The Basket, Checkout, Stripe payments, webhooks and email verification are comparable to the walkthrough project as I believe the basis of this functionality is sufficient for the user goals of this website. 
 
 ### Django:
-  - I referred to the Django documentation whilst building my project, referring to the following articles.
-    - 
-    - 
-    - 
+  - I referred to the Django documentation throughout the development of my project.
+    - [Django](https://docs.djangoproject.com/en/4.2/)
 
 ### Bootstrap:
-  - I have used Bootstrap extensively throughout the development of this website, including for layout utilities and cards. The Bootstrap documentation was referred to when building the navbar, image carousels, and dropdowns. These were sourced through the [Bootstrap documentation]()
+  - I have used Bootstrap extensively throughout the development of this website, including for layout utilities and cards. The Bootstrap documentation was referred to when building the navbar, image cards, and dropdowns. These were sourced through the:
+    - [Bootstrap documentation](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 
 ### Stack Overflow: 
-  - Throughout the development of this website, I have referred to stack overflow articles as follows:
+  - Throughout the development of this website, I have referred to stack overflow article to resolve minor issues.
 
 ## Content
-
-- The content for this website has been generated, partly from my own knowledge of the food industry but I have also referred to and took inspiration from [Campden BRI]( https://www.campdenbri.co.uk/) and [FDF]( https://www.fdf.org.uk/).
+- The content for this website has been inspired by other similar websites and organisations, including:
+    - [Greenpeace](https://www.greenpeace.org.uk/)
+    - [4oceon](https://www.4ocean.com/)
+    - [World Land Trust](https://www.worldlandtrust.org/)
 
 ## Media
 
 - As I sourced all the images for the Green Earth Foundation website from Pexels and Unsplash, there is an extensive list of media credits available.
 
 - Please refer [here](docs/README/CREDITS.md) for full image and media credits for the Green Earth Foundation website.
+
+## Acknowledgements
+
+- Thank you to my mentor Chris Quinn for helpful feedback, industry insights and recommended tools.
+
+- Thank you to Pasquale Fasulo and Manu Perez at City of Bristol College for their support.
+
+Please note, this website is purely for the sake of a developer's portfolio and not for public use.
+
+Paul Trotter (PATIAT), 2023.
