@@ -402,4 +402,10 @@ Upon testing, this appeared to work:
 
 <h2 align="left" width="600px"><img src="TESTING/manual-test-bug-one-2.png"></h2>
 
+## Unresolved
+
+### When the postcode in the address given at checkout and in the stripe payment field do not match, the webhook appears to beleive that the order hasn't been created and it creates a duplicate. 
+
+* I discovered this at a late stage in development and have not had sufficient time to resolve it, although it would be a priority time allowing.
+
 Back to [README.md](/README.md#testing)

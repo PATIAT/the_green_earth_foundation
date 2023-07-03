@@ -262,7 +262,7 @@ The imagery used in the application aims to inspire, educate, and create an emot
 
 # Wireframes
 
-- [View my wireframes in PDF form here]().
+- [View my wireframes in PDF form here](docs/README/PATIAT_CI_MSP_4_Wireframes.png).
 
 # Data Model
 
