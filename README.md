@@ -11,7 +11,6 @@
 ### The Green Earth Foundation is a fictional web application that offers:
 - Eco-friendly merchandise: Explore a range of sustainable clothing and accessories that support our environmental initiatives.
 - Simple shopping experience: Add products to your bag, update quantities, and proceed to secure checkout with ease.
-- Worthwhile donations: Opt for one-off or regular contributions, supporting our cause through recurring donations.
 - Informative environmental news: Read articles and news updates related to environmental issues and stay connected with our initiatives.
 - Personalised profile and past orders: Create an account, view order history, and manage details for a personalised experience.
 
