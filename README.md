@@ -243,10 +243,8 @@ The imagery used in the application aims to inspire, educate, and create an emot
 - Users must be logged in
 - Users can only access their own User Profile
 
-## Reviews Pages
-- Users can view all their reviews
-- Users must be logged in
-- Users can only access their own reviews
+## Articles Pages
+- Users can view all articles
 
 ## Add/ Edit/ Delete Products / Articles (superuser)
 - Add Product/Article Page

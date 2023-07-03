@@ -74,8 +74,6 @@ The Green Earth Foundation website pages passed all tests using the W3C HTML Val
 
 <h2 align="left" width="600px"><img src="TESTING/html-validation-team-page.png"></h2>
 
-<h2 align="left" width="600px"><img src=""></h2>
-
 ## W3C CSS Validator
 
 The Green Earth Foundation website passed all tests using the W3C CSS Validator tool.
@@ -340,7 +338,7 @@ I also personally tested the website on iPhone 13 Pro, iPhone SE, iPhone 11, iPa
 
 <h2 align="left" width="600px"><img src="TESTING/manual-test-checkout-success.png"></h2>
 
-## User authentification
+## User authentication
 
 - Register, sign in and sign out pages render as expected.
 - Non-authenticated users cannot access user profile, they are redirected to sign in screen.
