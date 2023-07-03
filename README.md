@@ -278,7 +278,7 @@ The following Data models were used:
 
 This diagram outlines each model's fields and illustrates the relationship between the models:
 
-<h2 align="left"><img src=" "></h2>
+<h2 align="left" width="600px"><img src="docs/README/green-earth-foundation-database-schema.png"></h2>
 
 # Technologies Used
 
